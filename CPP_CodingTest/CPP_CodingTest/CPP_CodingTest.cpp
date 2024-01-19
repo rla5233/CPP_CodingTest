@@ -1,40 +1,57 @@
 ﻿#include <iostream>
-#include <vector>
-#include <map>
 #include <string>
 
-// 1620
+// 9996
 int main()
 {
-    std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    
-    int N = 0, M = 0;
-    std::cin >> N >> M;
+    //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
+    int N = 0;
+    std::cin >> N;
 
-    std::vector<std::string> PoketmonVec(N);
-    std::map<std::string, int> PoketmonMap = std::map<std::string, int>();
+    std::string Pattern = "";
+    std::cin >> Pattern;
 
-    for (int i = 0; i < N; i++)
+    bool isLeft = true;
+    std::string Left = "", Right = "";
+    for (int i = 0; i < Pattern.length(); i++)
     {
-        std::string Input = "";
-        std::cin >> Input;
-
-        PoketmonMap[Input] = i + 1;
-        PoketmonVec[i] = Input;
-    }
-
-    for (int i = 0; i < M; i++)
-    {
-        std::string Input = "";
-        std::cin >> Input;
-
-        std::map<std::string, int>::iterator FindIter = PoketmonMap.find(Input);
-        if (FindIter != PoketmonMap.end())
+        if (Pattern[i] == '*')
         {
-            std::cout << FindIter->second << "\n";
+            isLeft = false;
+            continue;
+        }
+
+        if (isLeft)
+        {
+            Left += Pattern[i];
         }
         else
         {
-            std::cout << PoketmonVec[stoi(Input) - 1] << "\n";
+            Right += Pattern[i];
         }
-    }}
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        std::string File = "";
+        std::cin >> File;
+
+        int a = 0;
+        if (Left.length() + Right.length() <= File.length())
+        {
+            if (Left == File.substr(0, Left.length())
+                && Right == File.substr(File.length() - Right.length(), Right.length()))
+            {
+                std::cout << "DA\n";
+            }
+            else
+            {
+                std::cout << "NE\n";
+            }
+        }
+        else
+        {
+            std::cout << "NE\n";
+        }    
+    }
+}
