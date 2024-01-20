@@ -1,57 +1,31 @@
 ﻿#include <iostream>
-#include <string>
+#include <vector>
 
-// 9996
+// 2559
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int N = 0;
-    std::cin >> N;
+    int N = 0, K = 0;
+    std::cin >> N >> K;
 
-    std::string Pattern = "";
-    std::cin >> Pattern;
-
-    bool isLeft = true;
-    std::string Left = "", Right = "";
-    for (int i = 0; i < Pattern.length(); i++)
-    {
-        if (Pattern[i] == '*')
-        {
-            isLeft = false;
-            continue;
-        }
-
-        if (isLeft)
-        {
-            Left += Pattern[i];
-        }
-        else
-        {
-            Right += Pattern[i];
-        }
-    }
-
+    std::vector<int> SumTemperature(N + 1, 0);
     for (int i = 0; i < N; i++)
     {
-        std::string File = "";
-        std::cin >> File;
-
-        int a = 0;
-        if (Left.length() + Right.length() <= File.length())
-        {
-            if (Left == File.substr(0, Left.length())
-                && Right == File.substr(File.length() - Right.length(), Right.length()))
-            {
-                std::cout << "DA\n";
-            }
-            else
-            {
-                std::cout << "NE\n";
-            }
-        }
-        else
-        {
-            std::cout << "NE\n";
-        }    
+        int Num = 0;
+        std::cin >> Num;
+        SumTemperature[i + 1] = SumTemperature[i] + Num;
     }
+
+    int SumMax = 0, Sum = 0;
+    int Left = 0, Right = K;
+    for (int i = 0; i + Right < SumTemperature.size(); i++)
+    {
+        Sum = SumTemperature[i + Right] - SumTemperature[i + Left];
+        if (Sum > SumMax || i == 0)
+        {
+            SumMax = Sum;
+        }
+    }
+
+    std::cout << SumMax;
 }
