@@ -1,31 +1,32 @@
 ﻿#include <iostream>
-#include <vector>
+#include <map>
 
-// 2559
+// 9375
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int N = 0, K = 0;
-    std::cin >> N >> K;
+    int TestCase = 0;
+    std::cin >> TestCase;
 
-    std::vector<int> SumTemperature(N + 1, 0);
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < TestCase; i++)
     {
-        int Num = 0;
-        std::cin >> Num;
-        SumTemperature[i + 1] = SumTemperature[i] + Num;
-    }
-
-    int SumMax = 0, Sum = 0;
-    int Left = 0, Right = K;
-    for (int i = 0; i + Right < SumTemperature.size(); i++)
-    {
-        Sum = SumTemperature[i + Right] - SumTemperature[i + Left];
-        if (Sum > SumMax || i == 0)
+        int Count = 0;
+        std::cin >> Count;
+        std::map<std::string, int> Clothes;
+        for (int i = 0; i < Count; i++)
         {
-            SumMax = Sum;
+            std::string A = "", B = "";
+            std::cin >> A >> B;
+            Clothes[B]++;
         }
-    }
 
-    std::cout << SumMax;
+        long long AllCase = 1;
+        for (auto i : Clothes)
+        {
+            AllCase *= (static_cast<long long>(i.second) + 1);
+        }
+
+        --AllCase;
+        std::cout << AllCase << "\n";
+    }
 }
