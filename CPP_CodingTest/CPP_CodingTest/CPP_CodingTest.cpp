@@ -1,37 +1,34 @@
 ﻿#include <iostream>
-#include <stack>
 
-// 3986
+// 4375
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int N = 0;
-    std::cin >> N;
-
-    int count = 0;
-    for (int i = 0; i < N; i++)
+    long long n = 0;
+    
+    while (true)
     {
-        std::string Word = "";
-        std::cin >> Word;
-
-        std::stack<char> Stack = std::stack<char>();
-        for (int i = 0; i < Word.size(); i++)
+        std::cin >> n;
+        if (std::cin.eof())
         {
-            if (Stack.empty() || Stack.top() != Word[i])
+            break;
+        }
+
+        long long count = 1;
+        int ans = 1;
+        while (true)
+        {
+            if (count % n == 0)
             {
-                Stack.push(Word[i]);
+                std::cout << ans << "\n";
+                break;
             }
             else
             {
-                Stack.pop();
+                count = (count * 10) + 1;
+                count %= n;
+                ++ans;
             }
         }
-
-        if (Stack.empty())
-        {
-            ++count;
-        }
     }
-
-    std::cout << count;
 }
