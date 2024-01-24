@@ -1,34 +1,26 @@
 ﻿#include <iostream>
+#include <vector>
 
-// 4375
+// 11659
 int main()
 {
-    //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    long long n = 0;
-    
-    while (true)
-    {
-        std::cin >> n;
-        if (std::cin.eof())
-        {
-            break;
-        }
+    std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
+    int N = 0, M = 0;
+    std::cin >> N >> M;
 
-        long long count = 1;
-        int ans = 1;
-        while (true)
-        {
-            if (count % n == 0)
-            {
-                std::cout << ans << "\n";
-                break;
-            }
-            else
-            {
-                count = (count * 10) + 1;
-                count %= n;
-                ++ans;
-            }
-        }
+    std::vector<int> Sum(N + 1, 0);
+    for (int i = 0; i < N; i++)
+    {
+        int Num = 0;
+        std::cin >> Num;
+        Sum[i + 1] = Sum[i] + Num;
+    }
+
+    for (int i = 0; i < M; i++)
+    {
+        int Left = 0, Right = 0;
+        std::cin >> Left >> Right;
+
+        std::cout << Sum[Right] - Sum[Left - 1] << "\n";
     }
 }
