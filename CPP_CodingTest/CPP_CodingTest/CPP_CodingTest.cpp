@@ -1,32 +1,33 @@
 ﻿#include <iostream>
-#include <map>
+#include <stack>
 
-// 9375
+// 11899
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int TestCase = 0;
-    std::cin >> TestCase;
+    std::string String = "";
+    std::cin >> String;
 
-    for (int i = 0; i < TestCase; i++)
+    std::stack<char> Stack;
+    for (int i = 0; i < String.size(); i++)
     {
-        int Count = 0;
-        std::cin >> Count;
-        std::map<std::string, int> Clothes;
-        for (int i = 0; i < Count; i++)
+        char Ch = String[i];
+        if (Ch == '(' || Stack.empty())
         {
-            std::string A = "", B = "";
-            std::cin >> A >> B;
-            Clothes[B]++;
+            Stack.push(Ch);
         }
-
-        long long AllCase = 1;
-        for (auto i : Clothes)
+        else if (Ch == ')')
         {
-            AllCase *= (static_cast<long long>(i.second) + 1);
+            if (Stack.top() == '(')
+            {
+                Stack.pop();
+            }
+            else
+            {
+                Stack.push(Ch);
+            }
         }
-
-        --AllCase;
-        std::cout << AllCase << "\n";
     }
+
+    std::cout << Stack.size();
 }
