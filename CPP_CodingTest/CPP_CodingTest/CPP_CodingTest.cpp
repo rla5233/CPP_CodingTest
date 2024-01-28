@@ -1,33 +1,19 @@
 ﻿#include <iostream>
-#include <stack>
+#include <algorithm>
 
-// 11899
+// 2992
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    std::string String = "";
-    std::cin >> String;
+    std::string Num = "";
+    std::cin >> Num;
 
-    std::stack<char> Stack;
-    for (int i = 0; i < String.size(); i++)
+    if (next_permutation(Num.begin(), Num.end()))
     {
-        char Ch = String[i];
-        if (Ch == '(' || Stack.empty())
-        {
-            Stack.push(Ch);
-        }
-        else if (Ch == ')')
-        {
-            if (Stack.top() == '(')
-            {
-                Stack.pop();
-            }
-            else
-            {
-                Stack.push(Ch);
-            }
-        }
+        std::cout << Num;
     }
-
-    std::cout << Stack.size();
+    else
+    {
+        std::cout << "0";
+    }
 }
