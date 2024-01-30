@@ -1,45 +1,31 @@
 ﻿#include <iostream>
-#include <vector>
-#include <map>
+#include <set>
 
-// 9322
+// 14425
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int TestCase = 0;
-    std::cin >> TestCase;
+    int N = 0, M = 0;
+    std::cin >> N >> M;
 
-    for (int i = 0; i < TestCase; i++)
+    std::set<std::string> WordSet;
+    for (int i = 0; i < N; i++)
     {
-        int WordCount = 0;
-        std::cin >> WordCount;
-
         std::string Word = "";
-        std::map<std::string, int> FirstKey;
-        for (int idx = 0; idx < WordCount; idx++)
-        {
-            std::cin >> Word;
-            FirstKey[Word] = idx;
-        }
-
-        std::vector<int> Order(WordCount);
-        for (int idx = 0; idx < WordCount; idx++)
-        {
-            std::cin >> Word;
-            Order[idx] = FirstKey[Word];
-        }
-
-        std::vector<std::string> OrgWordVec(WordCount);
-        for (int idx = 0; idx < WordCount; idx++)
-        {
-            std::cin >> Word;
-            OrgWordVec[Order[idx]] = Word;
-        }
-
-        for (std::string& Word : OrgWordVec)
-        {
-            std::cout << Word << " ";
-        }
-        std::cout << "\n";
+        std::cin >> Word;
+        WordSet.insert(Word);
     }
+
+    int Count = 0;
+    for (int i = 0; i < M; i++)
+    {
+        std::string Word = "";
+        std::cin >> Word;
+        if (WordSet.contains(Word))
+        {
+            ++Count;
+        }
+    }
+
+    std::cout << Count;
 }
