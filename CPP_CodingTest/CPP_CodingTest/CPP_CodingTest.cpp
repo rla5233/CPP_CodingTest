@@ -1,31 +1,68 @@
 ﻿#include <iostream>
-#include <set>
+#include <string>
+#include <stack>
 
-// 14425
+// 17413
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    int N = 0, M = 0;
-    std::cin >> N >> M;
+    std::string Word = "";
+    getline(std::cin, Word);
 
-    std::set<std::string> WordSet;
-    for (int i = 0; i < N; i++)
+    std::string Result = "";
+    std::stack<char> WordStack;
+    for (int i = 0; i < Word.size(); i++)
     {
-        std::string Word = "";
-        std::cin >> Word;
-        WordSet.insert(Word);
-    }
-
-    int Count = 0;
-    for (int i = 0; i < M; i++)
-    {
-        std::string Word = "";
-        std::cin >> Word;
-        if (WordSet.contains(Word))
+        if (WordStack.empty())
         {
-            ++Count;
+            if (Word[i] == '<')
+            {
+                Result += Word[i];
+            }
+         
+            WordStack.push(Word[i]);
+        }
+        else if (Word[i] == '<')
+        {
+            while (false == WordStack.empty())
+            {
+                Result += WordStack.top();
+                WordStack.pop();
+            }
+
+            WordStack.push(Word[i]);
+            Result += Word[i];
+        }
+        else if (WordStack.top() == '<')
+        {
+            if (Word[i] == '>')
+            {
+                WordStack.pop();
+            }
+
+            Result += Word[i];
+        }
+        else if (Word[i] == ' ')
+        {
+            while (false == WordStack.empty())
+            {
+                Result += WordStack.top();
+                WordStack.pop();
+            }
+
+            Result += Word[i];
+        }
+        else
+        {
+            WordStack.push(Word[i]);
         }
     }
 
-    std::cout << Count;
+    while (false == WordStack.empty())
+    {
+        Result += WordStack.top();
+        WordStack.pop();
+    }
+
+    std::cout << Result;
 }
