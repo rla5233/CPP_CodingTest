@@ -1,68 +1,21 @@
 ﻿#include <iostream>
-#include <string>
-#include <stack>
+#include <vector>
 
-// 17413
+// 2903
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-    std::string Word = "";
-    getline(std::cin, Word);
 
-    std::string Result = "";
-    std::stack<char> WordStack;
-    for (int i = 0; i < Word.size(); i++)
+    int N = 0;
+    std::cin >> N;
+
+    std::vector<int> Len(N + 1, 0);
+    Len[0] = 2;
+
+    for (int i = 1; i <= N; i++)
     {
-        if (WordStack.empty())
-        {
-            if (Word[i] == '<')
-            {
-                Result += Word[i];
-            }
-         
-            WordStack.push(Word[i]);
-        }
-        else if (Word[i] == '<')
-        {
-            while (false == WordStack.empty())
-            {
-                Result += WordStack.top();
-                WordStack.pop();
-            }
-
-            WordStack.push(Word[i]);
-            Result += Word[i];
-        }
-        else if (WordStack.top() == '<')
-        {
-            if (Word[i] == '>')
-            {
-                WordStack.pop();
-            }
-
-            Result += Word[i];
-        }
-        else if (Word[i] == ' ')
-        {
-            while (false == WordStack.empty())
-            {
-                Result += WordStack.top();
-                WordStack.pop();
-            }
-
-            Result += Word[i];
-        }
-        else
-        {
-            WordStack.push(Word[i]);
-        }
+        Len[i] = 2 * Len[i - 1] - 1;
     }
 
-    while (false == WordStack.empty())
-    {
-        Result += WordStack.top();
-        WordStack.pop();
-    }
-
-    std::cout << Result;
+    std::cout << Len[N] * Len[N];
 }
