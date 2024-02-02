@@ -1,21 +1,59 @@
 ﻿#include <iostream>
-#include <vector>
+#include <string>
 
-// 2903
+// 1541
 int main()
 {
     //std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
-
-    int N = 0;
-    std::cin >> N;
-
-    std::vector<int> Len(N + 1, 0);
-    Len[0] = 2;
-
-    for (int i = 1; i <= N; i++)
+    std::string Problem = "";
+    std::cin >> Problem;
+    
+    int result = 0;
+    bool Exist_Minus = false;
+    std::string num = "";
+    for (int i = 0; i < Problem.size(); i++)
     {
-        Len[i] = 2 * Len[i - 1] - 1;
+        if (Problem[i] == '-')
+        {
+            if (Exist_Minus)
+            {
+                result -= stoi(num);
+            }
+            else
+            {
+                result += stoi(num);
+            }
+
+            num = "";
+            Exist_Minus = true;
+        }
+        else if (Problem[i] == '+')
+        {
+            if (Exist_Minus)
+            {
+                result -= stoi(num);
+            }
+            else
+            {
+                result += stoi(num);
+            }
+
+            num = "";
+        }
+        else
+        {
+            num += Problem[i];
+        }
+    } 
+
+    if (Exist_Minus)
+    {
+        result -= stoi(num);
+    }
+    else
+    {
+        result += stoi(num);
     }
 
-    std::cout << Len[N] * Len[N];
+    std::cout << result;
 }
