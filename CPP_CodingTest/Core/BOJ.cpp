@@ -149,3 +149,24 @@ void BOJ::Problem_18258()
 		}
 	}
 }
+void BOJ::Problem_2164()
+{
+	int N = 0;
+	std::cin >> N;
+
+	std::queue<int> Q;
+	for (int i = 1; i <= N; i++)
+	{
+		Q.push(i);
+	}
+
+	while (1 != Q.size())
+	{
+		Q.pop();
+		int Front = Q.front();
+		Q.push(Front);
+		Q.pop();
+	}
+
+	std::cout << Q.front();
+}
