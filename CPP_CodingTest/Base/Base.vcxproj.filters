@@ -4,15 +4,24 @@
     <Filter Include="PreCompile">
       <UniqueIdentifier>{a5e08298-76c1-4f16-aa7e-e52fe6b2c54e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{d09c48d8-3894-4954-adc9-a75d8cffb324}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
+    <ClInclude Include="TimeShort.h">
+      <Filter>Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeShort.cpp">
+      <Filter>Time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

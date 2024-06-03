@@ -16,7 +16,7 @@ public:
 
 public:
 	static void Problem_10845();
-
+	static void Problem_18258();
 
 
 };
