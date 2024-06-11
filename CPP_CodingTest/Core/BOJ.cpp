@@ -170,3 +170,70 @@ void BOJ::Problem_2164()
 
 	std::cout << Q.front();
 }
+void BOJ::Problem_10828()
+{
+	int N = 0;
+	std::cin >> N;
+
+	std::stack<int> Stack;
+	for (int i = 0; i < N; i++)
+	{
+		std::string Input = "";
+		std::cin >> Input;
+
+		if ("push" == Input)
+		{
+			int Num = 0;
+			std::cin >> Num;
+			Stack.push(Num);
+			continue;
+		}
+
+		if ("pop" == Input)
+		{
+			if (true == Stack.empty())
+			{
+				std::cout << "-1\n";
+			}
+			else
+			{
+				std::cout << Stack.top() << "\n";
+				Stack.pop();
+			}
+
+			continue;
+		}
+
+		if ("size" == Input)
+		{
+			std::cout << Stack.size() << "\n";
+			continue;
+		}
+
+		if ("empty" == Input)
+		{
+			if (true == Stack.empty())
+			{
+				std::cout << "1\n";
+			}
+			else
+			{
+				std::cout << "0\n";
+			}
+
+			continue;
+		}
+
+		if ("top" == Input)
+		{
+			if (true == Stack.empty())
+			{
+				std::cout << "-1\n";
+			}
+			else
+			{
+				std::cout << Stack.top() << "\n";
+			}
+		}
+	}
+}
