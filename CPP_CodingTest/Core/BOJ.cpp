@@ -276,44 +276,30 @@ void BOJ::Problem_2493()
 	};
 
 	int N = 0;
-	std::cin >> N;
+	scanf_s("%d", &N);
 	
 	std::stack<Top> Stack;
-	for (int i = 0; i < N; i++)
+	for (int i = 1; i <= N; i++)
 	{
 		int H = 0;
-		std::cin >> H;
+		scanf_s("%d", &H);
 
-		Top NewTop(H, i);
-		Stack.push(NewTop);
-	}
-
-	std::vector<int> Result(N, 0);
-	std::stack<Top> Temp;
-	while (false == Stack.empty())
-	{
-		if (true == Temp.empty())
+		while (false == Stack.empty())
 		{
-			Temp.push(Stack.top());
+			if (H < Stack.top().Height)
+			{
+				printf_s("%d ", Stack.top().Idx);
+				break;
+			}
+		
 			Stack.pop();
 		}
-		else
-		{
-			if (Stack.top().Height > Temp.top().Height)
-			{
-				Result[Temp.top().Idx] = static_cast<int>(Stack.size());
-				Temp.pop();
-			}
-			else
-			{
-				Temp.push(Stack.top());
-				Stack.pop();
-			}
-		}
-	}
 
-	for (size_t i = 0; i < Result.size(); i++)
-	{
-		std::cout << Result[i] << " ";
+		if (true == Stack.empty())
+		{
+			printf_s("0 ");
+		}
+
+		Stack.push(Top(H, i));
 	}
 }
