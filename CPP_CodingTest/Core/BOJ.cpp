@@ -237,3 +237,33 @@ void BOJ::Problem_10828()
 		}
 	}
 }
+void BOJ::Problem_10773()
+{
+	int K = 0;
+	std::cin >> K;
+
+	std::stack<int> Stack;
+	for (int i = 0; i < K; i++)
+	{
+		int Num = 0;
+		std::cin >> Num;
+
+		if (0 == Num)
+		{
+			Stack.pop();
+		}
+		else
+		{
+			Stack.push(Num);
+		}
+	}
+
+	int Sum = 0;
+	while (false == Stack.empty())
+	{
+		Sum += Stack.top();
+		Stack.pop();
+	}
+
+	std::cout << Sum;
+}
