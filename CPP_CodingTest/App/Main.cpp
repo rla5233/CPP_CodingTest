@@ -2,7 +2,7 @@
 
 int main()
 {
-	BOJ::Problem_10807();
+	BOJ::Problem_13300();
 
 	return 0;
 }

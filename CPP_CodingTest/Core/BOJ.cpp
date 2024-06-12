@@ -360,6 +360,63 @@ void BOJ::Problem_10845()
 		}
 	}
 }
+void BOJ::Problem_11328()
+{
+	int N = 0;
+	std::cin >> N;
+
+	for (int i = 0; i < N; i++)
+	{
+		std::string str1 = "", str2 = "";
+		std::cin >> str1 >> str2;
+
+		sort(str1.begin(), str1.end());
+		sort(str2.begin(), str2.end());
+
+		if (str1 == str2)
+		{
+			std::cout << "Possible\n";
+		}
+		else
+		{
+			std::cout << "Impossible\n";
+		}
+	}
+}
+void BOJ::Problem_13300()
+{
+	int N = 0, K = 0;
+	std::cin >> N >> K;
+
+	std::vector<int> Girl(6, 0);
+	std::vector<int> Boy(6, 0);
+
+	int S = 0, Y = 0;
+	for (int i = 0; i < N; i++)
+	{
+		std::cin >> S >> Y;
+
+		switch (S)
+		{
+		case 0:
+			++Girl[Y - 1];
+			break;
+		case 1:
+			++Boy[Y - 1];
+			break;
+		}
+	}
+
+	int Count = 0;
+	for (size_t i = 0; i < 6; i++)
+	{
+		float fK = static_cast<float>(K);
+		Count += static_cast<int>(ceil(Girl[i] / fK));
+		Count += static_cast<int>(ceil(Boy[i] / fK));
+	}
+
+	std::cout << Count;
+}
 void BOJ::Problem_18258()
 {
 	std::ios_base::sync_with_stdio(0);
