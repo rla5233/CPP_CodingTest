@@ -35,6 +35,30 @@ void BOJ::Problem_1475()
 	
 	std::cout << SetCount;
 }
+void BOJ::Problem_1919()
+{
+	std::string str1 = "", str2 = "";
+	std::cin >> str1 >> str2;
+
+	std::vector<int> Alpha(26, 0);
+	for (size_t i = 0; i < str1.size(); i++)
+	{
+		++Alpha[str1[i] - 'a'];
+	}
+	
+	for (size_t i = 0; i < str2.size(); i++)
+	{
+		--Alpha[str2[i] - 'a'];
+	}
+
+	int Count = 0;
+	for (size_t i = 0; i < Alpha.size(); i++)
+	{
+		Count += abs(Alpha[i]);
+	}
+
+	std::cout << Count;
+}
 void BOJ::Problem_2164()
 {
 	int N = 0;
