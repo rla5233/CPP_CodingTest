@@ -15,6 +15,7 @@ public:
 	BOJ& operator=(BOJ&& _Other) noexcept = delete;
 
 public:
+	static void Problem_1475();
 	static void Problem_2164();
 	static void Problem_2493();
 	static void Problem_2577();
