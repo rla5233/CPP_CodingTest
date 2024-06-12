@@ -1,9 +1,13 @@
 #pragma once
 
 #include <iostream>
-#include <cmath>
-#include <string>
+
+#include <vector>
 #include <queue>
 #include <stack>
 #include <map>
+
+#include <algorithm>
+#include <string>
+#include <cmath>
 

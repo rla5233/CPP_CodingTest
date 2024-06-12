@@ -110,6 +110,46 @@ void BOJ::Problem_2577()
 		std::cout << NumVec[i] << std::endl;
 	}
 }
+void BOJ::Problem_3273()
+{
+	int n = 0;
+	std::cin >> n;
+
+	std::vector<int> Sequence;
+	Sequence.reserve(n);
+
+	for (size_t i = 0; i < Sequence.capacity(); i++)
+	{
+		int Num = 0;
+		std::cin >> Num;
+		Sequence.push_back(Num);
+	}
+
+	sort(Sequence.begin(), Sequence.end());
+
+	int x = 0;
+	std::cin >> x;
+
+	int Count = 0;
+	int Left = 0, Right = static_cast<int>(Sequence.size() - 1);
+	while (Left < Right)
+	{
+		if (x < Sequence[Left] + Sequence[Right])
+		{
+			--Right;
+		}
+		else if (x > Sequence[Left] + Sequence[Right])
+		{
+			++Left;
+		}
+		else
+		{
+			++Left; --Right; ++Count;
+		}
+	}
+
+	std::cout << Count;
+}
 void BOJ::Problem_10773()
 {
 	int K = 0;
