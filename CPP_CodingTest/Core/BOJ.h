@@ -15,13 +15,14 @@ public:
 	BOJ& operator=(BOJ&& _Other) noexcept = delete;
 
 public:
+	static void Problem_2164();
+	static void Problem_2493();
+	static void Problem_2577();
+	static void Problem_10773();
+	static void Problem_10808();
+	static void Problem_10828();
 	static void Problem_10845();
 	static void Problem_18258();
-	static void Problem_2164();
-	static void Problem_10828();
-	static void Problem_10773();
-	static void Problem_2493();
-	static void Problem_10808();
 
 };
 
