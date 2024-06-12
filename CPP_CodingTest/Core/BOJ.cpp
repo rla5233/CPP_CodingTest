@@ -303,3 +303,19 @@ void BOJ::Problem_2493()
 		Stack.push(Top(H, i));
 	}
 }
+void BOJ::Problem_10808()
+{
+	std::string Word = "";
+	std::cin >> Word;
+
+	std::vector<int> Alphabet(26, 0);
+	for (size_t i = 0; i < Word.size(); i++)
+	{
+		++Alphabet[Word[i] - 'a'];
+	}
+
+	for (size_t i = 0; i < Alphabet.size(); i++)
+	{
+		std::cout << Alphabet[i] << " ";
+	}
+}
