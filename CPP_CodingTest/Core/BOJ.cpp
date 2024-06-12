@@ -144,7 +144,9 @@ void BOJ::Problem_3273()
 		}
 		else
 		{
-			++Left; --Right; ++Count;
+			++Left; 
+			--Right; 
+			++Count;
 		}
 	}
 
@@ -179,6 +181,33 @@ void BOJ::Problem_10773()
 	}
 
 	std::cout << Sum;
+}
+void BOJ::Problem_10807()
+{
+	int N = 0;
+	std::cin >> N;
+
+	int Num = 0;
+	
+	std::vector<int> NumVec;
+	NumVec.reserve(N);
+	for (int i = 0; i < NumVec.capacity(); i++)
+	{
+		std::cin >> Num;
+		NumVec.push_back(Num);
+	}
+
+	int v = 0, count = 0;
+	std::cin >> v;
+	for (size_t i = 0; i < NumVec.size(); i++)
+	{
+		if (v == NumVec[i])
+		{
+			++count;
+		}
+	}
+
+	std::cout << count;
 }
 void BOJ::Problem_10808()
 {
