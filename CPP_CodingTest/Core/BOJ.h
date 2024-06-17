@@ -21,6 +21,7 @@ public:
 	static void Problem_2493();
 	static void Problem_2577();
 	static void Problem_3273();
+	static void Problem_6198();
 	static void Problem_10773();
 	static void Problem_10807();
 	static void Problem_10808();

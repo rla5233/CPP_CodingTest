@@ -176,6 +176,49 @@ void BOJ::Problem_3273()
 
 	std::cout << Count;
 }
+void BOJ::Problem_6198()
+{
+	int N = 0;
+	std::cin >> N;
+
+	size_t Sum = 0;
+	std::stack<int> Building;
+	for (int i = 0; i < N; i++)
+	{
+		int Height = 0;
+		std::cin >> Height;
+
+		if (true == Building.empty())
+		{
+			Building.push(Height);
+		}
+		else
+		{
+			if (Building.top() > Height)
+			{
+				Sum += Building.size();
+				Building.push(Height);
+			}
+			else
+			{
+				while (Building.top() <= Height)
+				{
+					Building.pop();
+
+					if (true == Building.empty())
+					{
+						break;
+					}
+				}
+
+				Sum += Building.size();
+				Building.push(Height);
+			}
+		}
+	}
+
+	std::cout << Sum;
+}
 void BOJ::Problem_10773()
 {
 	int K = 0;
