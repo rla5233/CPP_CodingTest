@@ -80,6 +80,14 @@ void BOJ::Problem_2164()
 
 	std::cout << Q.front();
 }
+void BOJ::Problem_2178()
+{
+	int N = 0, M = 0;
+	std::cin >> N >> M;
+
+
+
+}
 void BOJ::Problem_2493()
 {
 	struct Top
