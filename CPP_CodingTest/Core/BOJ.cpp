@@ -59,6 +59,78 @@ void BOJ::Problem_1919()
 
 	std::cout << Count;
 }
+void BOJ::Problem_1926()
+{
+	int n = 0, m = 0;
+	std::cin >> n >> m;
+
+	std::vector<std::vector<int>> Picture(n);
+	int PictureCount = 0;
+	int MaxPictureSize = 0;
+
+	for (int y = 0; y < n; y++)
+	{
+		Picture[y].assign(m, 0);
+		for (int x = 0; x < m; x++)
+		{
+			std::cin >> Picture[y][x];
+		}
+	}
+
+	std::vector<int> dX = { 1, 0, -1, 0 };
+	std::vector<int> dY = { 0, 1, 0, -1 };
+
+	std::function BFS = [&](int _StartY, int _StartX)
+		{
+			if (1 != Picture[_StartY][_StartX])
+			{
+				return;
+			};
+
+			Picture[_StartY][_StartX] = 0;
+			++PictureCount;
+
+			int PictureSize = 1;
+			std::queue<std::pair<int, int>> Q;
+			Q.push(std::make_pair(_StartY, _StartX));
+
+			while (false == Q.empty())
+			{
+				int X = Q.front().second;
+				int Y = Q.front().first;
+				Q.pop();
+
+				for (int i = 0; i < 4; i++)
+				{
+					int Next_X = X + dX[i];
+					int Next_Y = Y + dY[i];
+
+					if (0 <= Next_X && m > Next_X && 0 <= Next_Y && n > Next_Y
+						&& 1 == Picture[Next_Y][Next_X])
+					{
+						Picture[Next_Y][Next_X] = 0;
+						++PictureSize;
+						Q.push(std::make_pair(Next_Y, Next_X));
+					}
+				}
+			}
+
+			if (MaxPictureSize < PictureSize)
+			{
+				MaxPictureSize = PictureSize;
+			}
+		};
+
+	for (int y = 0; y < n; y++)
+	{
+		for (int x = 0; x < m; x++)
+		{
+			BFS(y, x);
+		}
+	}
+
+	std::cout << PictureCount << '\n' << MaxPictureSize;
+}
 void BOJ::Problem_2164()
 {
 	int N = 0;
