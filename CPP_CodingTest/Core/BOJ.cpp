@@ -9,6 +9,24 @@ BOJ::~BOJ()
 {
 }
 
+void BOJ::Problem_1309()
+{
+	std::vector<int> DP;
+	DP.reserve(100000);
+
+	DP.push_back(3);
+	DP.push_back(7);
+
+	int N = 0;
+	std::cin >> N;
+
+	for (int i = 2; i < N; i++)
+	{
+		DP.push_back((2 * DP[i - 1] + DP[i - 2]) % 9901);
+	}
+
+	std::cout << DP[N - 1];
+}
 void BOJ::Problem_1475()
 {
 	int N = 0;
