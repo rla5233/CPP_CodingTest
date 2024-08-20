@@ -7,6 +7,9 @@
     <Filter Include="PreCompile">
       <UniqueIdentifier>{90021ae8-c770-4e06-ac2e-3b70033884e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Programmers">
+      <UniqueIdentifier>{07592bbb-789a-47f8-8347-57d533513d84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -15,6 +18,9 @@
     <ClCompile Include="BOJ.cpp">
       <Filter>BOJ</Filter>
     </ClCompile>
+    <ClCompile Include="Programmers.cpp">
+      <Filter>Programmers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PreCompile.h">
@@ -22,6 +28,9 @@
     </ClInclude>
     <ClInclude Include="BOJ.h">
       <Filter>BOJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Programmers.h">
+      <Filter>Programmers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

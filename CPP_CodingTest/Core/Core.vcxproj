@@ -35,6 +35,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PreCompile.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="Programmers.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BOJ.h">
@@ -42,6 +46,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="PreCompile.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Programmers.h">
       <SubType>
       </SubType>
     </ClInclude>

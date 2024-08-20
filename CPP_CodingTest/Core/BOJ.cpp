@@ -4,7 +4,6 @@
 BOJ::BOJ()
 {
 }
-
 BOJ::~BOJ()
 {
 }
