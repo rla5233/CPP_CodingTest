@@ -49,7 +49,6 @@ int Programmers::Problem_250137(std::vector<int> Bandage, int Health, std::vecto
 
     return CurHp;
 }
-
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
@@ -82,6 +81,24 @@ std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std
     for (int i = Start; i <= End; i += InterVal)
     {
         Result.push_back(Num_list[i]);
+    }
+
+    return Result;
+}
+std::vector<int> Programmers::Problem_181893(std::vector<int> Arr, std::vector<int> Query)
+{
+    std::vector<int> Result = Arr;
+
+    for (int i = 0; i < Query.size(); ++i)
+    {
+        if (0 == i % 2)
+        {
+            Result = std::vector(Result.begin(), Result.begin() + Query[i] + 1);
+        }
+        else
+        {
+            Result = std::vector(Result.begin() + Query[i], Result.end());
+        }
     }
 
     return Result;
