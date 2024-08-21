@@ -8,6 +8,25 @@ Programmers::~Programmers()
 {
 }
 
+std::string Programmers::Problem_12899(int N)
+{
+    std::string Answer = "";
+
+    while (N != 0)
+    {
+        int Mod = N % 3;
+
+        N /= 3;
+        if (0 == Mod)
+        {
+            --N;
+        }
+
+        Answer = "412"[Mod] + Answer;
+    }
+
+    return Answer;
+}
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
