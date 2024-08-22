@@ -81,9 +81,35 @@ std::vector<int> Programmers::Problem_181893(std::vector<int> Arr, std::vector<i
 
     return Result;
 }
+std::vector<std::vector<int>> Programmers::Problem_250121(std::vector<std::vector<int>> Data, std::string Ext, int Val_Ext, std::string Sort_By)
+{
+    std::vector<std::vector<int>> Answer;
+
+    std::map<std::string, int> DataIndex;
+    DataIndex["code"] = 0;
+    DataIndex["date"] = 1;
+    DataIndex["maximum"] = 2;
+    DataIndex["remain"] = 3;
+
+    for (int i = 0; i < Data.size(); ++i)
+    {
+        if (Val_Ext > Data[i][DataIndex[Ext]])
+        {
+            Answer.push_back(Data[i]);
+        }
+    }
+
+    sort(Answer.begin(), Answer.end(), [&](const std::vector<int>& A, const std::vector<int>& B)
+        {
+            return A[DataIndex[Sort_By]] < B[DataIndex[Sort_By]];
+        }
+    );
+
+    return Answer;
+}
 int Programmers::Problem_250125(std::vector<std::vector<std::string>> Board, int H, int W)
 {
-    int N = Board.size();
+    int N = static_cast<int>(Board.size());
     int Count = 0;
 
     std::vector<int> dH = { 0, 1, -1, 0 };
