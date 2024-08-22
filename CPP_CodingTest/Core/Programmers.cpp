@@ -81,6 +81,32 @@ std::vector<int> Programmers::Problem_181893(std::vector<int> Arr, std::vector<i
 
     return Result;
 }
+int Programmers::Problem_250125(std::vector<std::vector<std::string>> Board, int H, int W)
+{
+    int N = Board.size();
+    int Count = 0;
+
+    std::vector<int> dH = { 0, 1, -1, 0 };
+    std::vector<int> dW = { 1, 0, 0, -1 };
+
+    for (int i = 0; i < 3; ++i)
+    {
+        int H_Check = H + dH[i];
+        int W_Check = W + dW[i];
+
+        if (0 > H_Check || N <= H_Check || 0 > W_Check || N <= W_Check)
+        {
+            continue;
+        }
+
+        if (Board[H][W] == Board[H_Check][W_Check])
+        {
+            ++Count;
+        }
+    }
+
+    return Count;
+}
 int Programmers::Problem_250137(std::vector<int> Bandage, int Health, std::vector<std::vector<int>> Attacks)
 {
 	int MaxHp = Health;
