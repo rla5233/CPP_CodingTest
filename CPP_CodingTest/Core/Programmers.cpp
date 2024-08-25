@@ -81,6 +81,38 @@ std::vector<int> Programmers::Problem_181893(std::vector<int> Arr, std::vector<i
 
     return Result;
 }
+std::vector<int> Programmers::Problem_181921(int L, int R)
+{
+    std::vector<int> Answer;
+
+    int CurNum = 5, Index = 1;
+    while (R >= CurNum)
+    {
+        if (L <= CurNum && R >= CurNum)
+        {
+            Answer.push_back(CurNum);
+        }
+
+        ++Index;
+
+        int Dex = Index;
+        std::string Bin = "";
+        while (Dex >= 2)
+        {
+            Bin = "01"[Dex % 2] + Bin;
+            Dex /= 2;
+        }
+
+        if (1 == Dex)
+        {
+            Bin = "1" + Bin;
+        }
+
+        CurNum = std::stoi(Bin) * 5;
+    }
+
+    return Answer.empty() ? std::vector<int>(1, -1) : Answer;
+}
 std::vector<std::vector<int>> Programmers::Problem_250121(std::vector<std::vector<int>> Data, std::string Ext, int Val_Ext, std::string Sort_By)
 {
     std::vector<std::vector<int>> Answer;
