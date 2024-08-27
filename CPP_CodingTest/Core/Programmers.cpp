@@ -27,6 +27,30 @@ std::string Programmers::Problem_12899(int N)
 
     return Answer;
 }
+int Programmers::Problem_120956(std::vector<std::string> Babbling)
+{
+    int Answer = 0;
+    std::vector<std::string> Words = { "aya", "ye", "woo", "ma" };
+    std::vector<int> Count(Babbling.size(), 0);
+
+    for (size_t i = 0; i < Babbling.size(); ++i)
+    {
+        for (std::string& Word : Words)
+        {
+            if (std::string::npos != Babbling[i].find(Word))
+            {
+                Count[i] += static_cast<int>(Word.size());
+            }
+        }
+
+        if (Babbling[i].size() == Count[i])
+        {
+            ++Answer;
+        }
+    }
+
+    return Answer;
+}
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
