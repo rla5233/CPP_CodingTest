@@ -51,6 +51,27 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
 
     return Answer;
 }
+std::vector<std::string> Programmers::Problem_178871(std::vector<std::string> Players, std::vector<std::string> Callings)
+{
+    std::map<std::string, int> PlayersIndex;
+    for (int i = 0; i < Players.size(); ++i)
+    {
+        PlayersIndex[Players[i]] = i;
+    }
+
+    for (int i = 0; i < Callings.size(); ++i)
+    {
+        std::string FrontPlayer = Players[PlayersIndex[Callings[i]]];
+        std::string BackPlayer = Players[PlayersIndex[Callings[i]] - 1];
+
+        std::swap(Players[PlayersIndex[Callings[i]]], Players[PlayersIndex[Callings[i]] - 1]);
+
+        --PlayersIndex[FrontPlayer];
+        ++PlayersIndex[BackPlayer];
+    }
+
+    return Players;
+}
 std::vector<std::vector<int>> Programmers::Problem_181832(int N)
 {
     std::vector<std::vector<int>> Answer(N, std::vector<int>(N, -1));
