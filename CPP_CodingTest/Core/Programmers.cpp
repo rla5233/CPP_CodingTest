@@ -51,6 +51,31 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
 
     return Answer;
 }
+std::vector<int> Programmers::Problem_176963(std::vector<std::string> Name, std::vector<int> Yearning, std::vector<std::vector<std::string>> Photo)
+{
+    std::unordered_map<std::string, int> NameYearning;
+    for (size_t i = 0; i < Name.size(); ++i)
+    {
+        NameYearning[Name[i]] = Yearning[i];
+    }
+
+    std::vector<int> Result;
+    for (std::vector<std::string>& Names : Photo)
+    {
+        int Score = 0;
+        for (std::string& CurName : Names)
+        {
+            if (NameYearning.end() != NameYearning.find(CurName))
+            {
+                Score += NameYearning[CurName];
+            }
+        }
+
+        Result.push_back(Score);
+    }
+
+    return Result;
+}
 std::vector<std::string> Programmers::Problem_178871(std::vector<std::string> Players, std::vector<std::string> Callings)
 {
     std::map<std::string, int> PlayersIndex;
