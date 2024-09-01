@@ -124,6 +124,29 @@ std::vector<std::vector<int>> Programmers::Problem_181832(int N)
 
     return Answer;
 }
+std::string Programmers::Problem_181846(std::string A, std::string B)
+{
+    std::string Result = "";
+
+    int Sum = 0;
+    bool isHighTen = false;
+    for (size_t i = 1; i <= std::max(A.size(), B.size()); ++i)
+    {
+        Sum += (A.size() >= i) ? A[A.size() - i] - '0' : 0;
+        Sum += (B.size() >= i) ? B[B.size() - i] - '0' : 0;
+
+        if (1 <= Sum / 10)
+        {
+            Sum %= 10;
+            isHighTen = true;
+        }
+
+        Result = std::to_string(Sum) + Result;
+        isHighTen ? Sum = 1, isHighTen = false : Sum = 0;
+    }
+
+    return Sum >= 1 ? "1" + Result : Result;
+}
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
