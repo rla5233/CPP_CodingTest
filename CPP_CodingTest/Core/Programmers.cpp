@@ -51,6 +51,24 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
 
     return Answer;
 }
+int Programmers::Problem_161989(int N, int M, std::vector<int> Section)
+{
+    int Result = 1, pivot = Section[0];
+    for (const int v : Section)
+    {
+        if (v < pivot + M)
+        {
+            continue;
+        }
+        else
+        {
+            pivot = v;
+            ++Result;
+        }
+    }
+
+    return Result;
+}
 std::vector<int> Programmers::Problem_176963(std::vector<std::string> Name, std::vector<int> Yearning, std::vector<std::vector<std::string>> Photo)
 {
     std::unordered_map<std::string, int> NameYearning;
