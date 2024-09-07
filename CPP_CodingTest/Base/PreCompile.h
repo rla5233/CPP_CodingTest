@@ -9,6 +9,7 @@
 #include <set>
 
 #include <algorithm>
+#include <sstream>
 #include <string>
 #include <bitset>
 #include <cmath>

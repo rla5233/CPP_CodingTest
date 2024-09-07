@@ -165,6 +165,19 @@ std::string Programmers::Problem_181846(std::string A, std::string B)
 
     return Sum >= 1 ? "1" + Result : Result;
 }
+std::vector<std::string> Programmers::Problem_181868(std::string String)
+{
+    std::vector<std::string> Result;
+
+    std::string Temp = "";
+    std::stringstream StringStream(String);
+    while (StringStream >> Temp)
+    {
+        Result.push_back(Temp);
+    }
+
+    return Result;
+}
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
