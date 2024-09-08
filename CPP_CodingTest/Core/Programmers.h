@@ -23,6 +23,7 @@ public:
 	static std::vector<std::vector<int>> Problem_181832(int N);
 	static std::string Problem_181846(std::string A, std::string B);
 	static int Problem_181865(std::string Binomial);
+	static std::vector<std::string> Problem_181866(std::string String);
 	static std::vector<std::string> Problem_181868(std::string String);
 	static std::vector<int> Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list);
 	static std::vector<int> Problem_181893(std::vector<int> Arr, std::vector<int> Query);

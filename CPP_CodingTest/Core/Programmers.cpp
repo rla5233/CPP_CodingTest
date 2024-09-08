@@ -189,6 +189,24 @@ int Programmers::Problem_181865(std::string Binomial)
 
     return Result;
 }
+std::vector<std::string> Programmers::Problem_181866(std::string String)
+{
+    std::vector<std::string> Result;
+
+    std::string Temp = "";
+    std::stringstream SStream(String);
+    while (std::getline(SStream, Temp, 'x'))
+    {
+        if (!Temp.empty())
+        {
+            Result.push_back(Temp);
+        }
+    }
+
+    std::sort(Result.begin(), Result.end());
+
+    return Result;
+}
 std::vector<std::string> Programmers::Problem_181868(std::string String)
 {
     std::vector<std::string> Result;

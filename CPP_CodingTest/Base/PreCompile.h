@@ -10,6 +10,7 @@
 
 #include <algorithm>
 #include <sstream>
+#include <istream>
 #include <string>
 #include <bitset>
 #include <cmath>
