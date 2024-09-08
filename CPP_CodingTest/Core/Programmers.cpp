@@ -165,6 +165,30 @@ std::string Programmers::Problem_181846(std::string A, std::string B)
 
     return Sum >= 1 ? "1" + Result : Result;
 }
+int Programmers::Problem_181865(std::string Binomial)
+{
+    int Result = 0;
+    int Num1 = 0, Num2 = 0;
+    char Oper;
+
+    std::stringstream SStream(Binomial);
+    SStream >> Num1 >> Oper >> Num2;
+
+    switch (Oper)
+    {
+    case '+':
+        Result = Num1 + Num2;
+        break;
+    case '-':
+        Result = Num1 - Num2;
+        break;
+    case '*':
+        Result = Num1 * Num2;
+        break;
+    }
+
+    return Result;
+}
 std::vector<std::string> Programmers::Problem_181868(std::string String)
 {
     std::vector<std::string> Result;
