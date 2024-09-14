@@ -165,6 +165,17 @@ std::string Programmers::Problem_181846(std::string A, std::string B)
 
     return Sum >= 1 ? "1" + Result : Result;
 }
+std::vector<int> Programmers::Problem_181857(std::vector<int> Arr)
+{
+    int Size = 1;
+    while (Size < Arr.size())
+    {
+        Size *= 2;
+    }
+
+    Arr.resize(Size);
+    return Arr;
+}
 int Programmers::Problem_181865(std::string Binomial)
 {
     int Result = 0;
