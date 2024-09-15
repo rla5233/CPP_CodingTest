@@ -184,6 +184,18 @@ int Programmers::Problem_181855(std::vector<std::string> StrArr)
     return *std::max_element(SizeCount.begin(), SizeCount.end());
 }
 
+int Programmers::Problem_181856(std::vector<int> Arr1, std::vector<int> Arr2)
+{
+    if (Arr1.size() != Arr2.size())
+    {
+        return Arr1.size() > Arr2.size() ? 1 : -1;
+    }
+
+    int SumArr1 = std::accumulate(Arr1.begin(), Arr1.end(), 0);
+    int SumArr2 = std::accumulate(Arr2.begin(), Arr2.end(), 0);
+    return SumArr1 > SumArr2 ? 1 : SumArr1 == SumArr2 ? 0 : -1;
+}
+
 std::vector<int> Programmers::Problem_181857(std::vector<int> Arr)
 {
     int Size = 1;
