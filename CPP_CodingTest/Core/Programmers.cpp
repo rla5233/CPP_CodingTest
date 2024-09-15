@@ -27,6 +27,7 @@ std::string Programmers::Problem_12899(int N)
 
     return Answer;
 }
+
 int Programmers::Problem_120956(std::vector<std::string> Babbling)
 {
     int Answer = 0;
@@ -51,6 +52,7 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
 
     return Answer;
 }
+
 int Programmers::Problem_161989(int N, int M, std::vector<int> Section)
 {
     int Result = 1, pivot = Section[0];
@@ -69,6 +71,7 @@ int Programmers::Problem_161989(int N, int M, std::vector<int> Section)
 
     return Result;
 }
+
 std::vector<int> Programmers::Problem_176963(std::vector<std::string> Name, std::vector<int> Yearning, std::vector<std::vector<std::string>> Photo)
 {
     std::unordered_map<std::string, int> NameYearning;
@@ -94,6 +97,7 @@ std::vector<int> Programmers::Problem_176963(std::vector<std::string> Name, std:
 
     return Result;
 }
+
 std::vector<std::string> Programmers::Problem_178871(std::vector<std::string> Players, std::vector<std::string> Callings)
 {
     std::map<std::string, int> PlayersIndex;
@@ -115,6 +119,7 @@ std::vector<std::string> Programmers::Problem_178871(std::vector<std::string> Pl
 
     return Players;
 }
+
 std::vector<std::vector<int>> Programmers::Problem_181832(int N)
 {
     std::vector<std::vector<int>> Answer(N, std::vector<int>(N, -1));
@@ -142,6 +147,7 @@ std::vector<std::vector<int>> Programmers::Problem_181832(int N)
 
     return Answer;
 }
+
 std::string Programmers::Problem_181846(std::string A, std::string B)
 {
     std::string Result = "";
@@ -165,6 +171,19 @@ std::string Programmers::Problem_181846(std::string A, std::string B)
 
     return Sum >= 1 ? "1" + Result : Result;
 }
+
+int Programmers::Problem_181855(std::vector<std::string> StrArr)
+{
+    std::vector<int> SizeCount(31, 0);
+
+    for (std::string& Str : StrArr)
+    {
+        ++SizeCount[Str.size()];
+    }
+
+    return *std::max_element(SizeCount.begin(), SizeCount.end());
+}
+
 std::vector<int> Programmers::Problem_181857(std::vector<int> Arr)
 {
     int Size = 1;
@@ -176,6 +195,7 @@ std::vector<int> Programmers::Problem_181857(std::vector<int> Arr)
     Arr.resize(Size);
     return Arr;
 }
+
 int Programmers::Problem_181865(std::string Binomial)
 {
     int Result = 0;
@@ -200,6 +220,7 @@ int Programmers::Problem_181865(std::string Binomial)
 
     return Result;
 }
+
 std::vector<std::string> Programmers::Problem_181866(std::string String)
 {
     std::vector<std::string> Result;
@@ -218,6 +239,7 @@ std::vector<std::string> Programmers::Problem_181866(std::string String)
 
     return Result;
 }
+
 std::vector<std::string> Programmers::Problem_181868(std::string String)
 {
     std::vector<std::string> Result;
@@ -231,6 +253,7 @@ std::vector<std::string> Programmers::Problem_181868(std::string String)
 
     return Result;
 }
+
 std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std::vector<int> Num_list)
 {
     std::vector<int> Result;
@@ -267,6 +290,7 @@ std::vector<int> Programmers::Problem_181897(int N, std::vector<int> Slicer, std
 
     return Result;
 }
+
 std::vector<int> Programmers::Problem_181893(std::vector<int> Arr, std::vector<int> Query)
 {
     std::vector<int> Result = Arr;
@@ -317,6 +341,7 @@ int Programmers::Problem_181916(int A, int B, int C, int D)
         return *std::min_element(Nums[1].begin(), Nums[1].end());
     }
 }
+
 std::vector<int> Programmers::Problem_181921(int L, int R)
 {
     std::vector<int> Answer;
@@ -349,6 +374,7 @@ std::vector<int> Programmers::Problem_181921(int L, int R)
 
     return Answer.empty() ? std::vector<int>(1, -1) : Answer;
 }
+
 std::vector<std::vector<int>> Programmers::Problem_250121(std::vector<std::vector<int>> Data, std::string Ext, int Val_Ext, std::string Sort_By)
 {
     std::vector<std::vector<int>> Answer;
@@ -375,6 +401,7 @@ std::vector<std::vector<int>> Programmers::Problem_250121(std::vector<std::vecto
 
     return Answer;
 }
+
 int Programmers::Problem_250125(std::vector<std::vector<std::string>> Board, int H, int W)
 {
     int N = static_cast<int>(Board.size());
@@ -401,6 +428,7 @@ int Programmers::Problem_250125(std::vector<std::vector<std::string>> Board, int
 
     return Count;
 }
+
 int Programmers::Problem_250137(std::vector<int> Bandage, int Health, std::vector<std::vector<int>> Attacks)
 {
 	int MaxHp = Health;
@@ -442,6 +470,7 @@ int Programmers::Problem_250137(std::vector<int> Bandage, int Health, std::vecto
 
     return CurHp;
 }
+
 int Programmers::Problem_258712(std::vector<std::string> Friends, std::vector<std::string> Gifts)
 {
     // Set Index
