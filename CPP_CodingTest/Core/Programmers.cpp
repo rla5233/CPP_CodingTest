@@ -178,6 +178,22 @@ int Programmers::Problem_181849(std::string NumStr)
     return Result;
 }
 
+int Programmers::Problem_181851(std::vector<int> Rank, std::vector<bool> Attendance)
+{
+    std::vector<std::pair<int, int>> NewRank;
+    for (size_t i = 0; i < Attendance.size(); ++i)
+    {
+        if (Attendance[i])
+        {
+            NewRank.push_back({ Rank[i], i });
+        }
+    }
+
+    std::sort(NewRank.begin(), NewRank.end());
+
+    return (10000 * NewRank[0].second) + (100 * NewRank[1].second) + NewRank[2].second;
+}
+
 int Programmers::Problem_181855(std::vector<std::string> StrArr)
 {
     std::vector<int> SizeCount(31, 0);
