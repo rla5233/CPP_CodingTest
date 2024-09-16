@@ -172,6 +172,12 @@ std::string Programmers::Problem_181846(std::string A, std::string B)
     return Sum >= 1 ? "1" + Result : Result;
 }
 
+int Programmers::Problem_181849(std::string NumStr)
+{
+    int Result = std::accumulate(NumStr.begin(), NumStr.end(), 0, [=](int A, char B) { return A + (B - '0'); });
+    return Result;
+}
+
 int Programmers::Problem_181855(std::vector<std::string> StrArr)
 {
     std::vector<int> SizeCount(31, 0);
