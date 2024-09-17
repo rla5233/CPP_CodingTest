@@ -53,6 +53,30 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::string Programmers::Problem_155652(std::string Str, std::string Skip, int Index)
+{
+    std::string Result = "";
+    for (char CurChar : Str)
+    {
+        int RoopIdx = 0;
+        int AlphaIdx = CurChar - 'a';
+        while (RoopIdx < Index)
+        {
+            ++AlphaIdx;
+            CurChar = 'a' + (AlphaIdx % 26);
+
+            if (std::string::npos == Skip.find(CurChar))
+            {
+                ++RoopIdx;
+            }
+        }
+
+        Result.push_back(CurChar);
+    }
+
+    return Result;
+}
+
 int Programmers::Problem_161989(int N, int M, std::vector<int> Section)
 {
     int Result = 1, pivot = Section[0];
