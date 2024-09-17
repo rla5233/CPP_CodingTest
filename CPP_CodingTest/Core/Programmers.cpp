@@ -148,6 +148,21 @@ std::vector<std::vector<int>> Programmers::Problem_181832(int N)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_181844(std::vector<int> Arr, std::vector<int> Delete)
+{
+    std::vector<int> Result;
+
+    for (const int& Num : Arr)
+    {
+        if (Delete.end() == std::find(Delete.begin(), Delete.end(), Num))
+        {
+            Result.push_back(Num);
+        }
+    }
+
+    return Result;
+}
+
 std::string Programmers::Problem_181846(std::string A, std::string B)
 {
     std::string Result = "";

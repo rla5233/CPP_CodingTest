@@ -21,6 +21,7 @@ public:
 	static std::vector<int> Problem_176963(std::vector<std::string> Name, std::vector<int> Yearning, std::vector<std::vector<std::string>> Photo);
 	static std::vector<std::string> Problem_178871(std::vector<std::string> Players, std::vector<std::string> Callings);
 	static std::vector<std::vector<int>> Problem_181832(int N);
+	static std::vector<int> Problem_181844(std::vector<int> Arr, std::vector<int> Delete);
 	static std::string Problem_181846(std::string A, std::string B);
 	static int Problem_181849(std::string NumStr);
 	static int Problem_181851(std::vector<int> Rank, std::vector<bool> Attendance);
