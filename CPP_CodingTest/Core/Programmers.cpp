@@ -53,6 +53,59 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_150370(std::string Today, std::vector<std::string> Terms, std::vector<std::string> Privacies)
+{
+    std::vector<int> Result;
+    std::string Temp = "";
+    int TodayDate = 0;
+
+    {
+        std::vector<int> TodayDateVec;
+        std::stringstream SStream(Today);
+        while (std::getline(SStream, Temp, '.'))
+        {
+            TodayDateVec.push_back(std::stoi(Temp));
+        }
+
+        TodayDate = (TodayDateVec[0] * 12 * 28) + (TodayDateVec[1] - 1) * 28 + TodayDateVec[2];
+    }
+
+    std::map<char, int> TermMap;
+    for (size_t i = 0; i < Terms.size(); ++i)
+    {
+        int Month = 0;
+        char Key = ' ';
+        std::stringstream SStream(Terms[i]);
+        SStream >> Key >> Month;
+        TermMap[Key] = Month;
+    }
+
+    for (size_t i = 0; i < Privacies.size(); ++i)
+    {
+        char TermKey = Privacies[i].back();
+        std::string StartDateStr = Privacies[i].substr(0, Privacies[i].size() - 2);
+
+        int EndDate = 0;
+        {
+            std::vector<int> StartDateVec;
+            std::stringstream SStream(StartDateStr);
+            while (std::getline(SStream, Temp, '.'))
+            {
+                StartDateVec.push_back(std::stoi(Temp));
+            }
+
+            EndDate = (StartDateVec[0] * 12 * 28) + (StartDateVec[1] - 1 + TermMap[TermKey]) * 28 + StartDateVec[2] - 1;
+        }
+
+        if (EndDate < TodayDate)
+        {
+            Result.push_back(i + 1);
+        }
+    }
+
+    return Result;
+}
+
 std::string Programmers::Problem_155652(std::string Str, std::string Skip, int Index)
 {
     std::string Result = "";

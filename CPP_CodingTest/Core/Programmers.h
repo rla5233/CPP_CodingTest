@@ -17,6 +17,7 @@ public:
 public:
 	static std::string Problem_12899(int N);
 	static int Problem_120956(std::vector<std::string> Babbling);
+	static std::vector<int> Problem_150370(std::string Today, std::vector<std::string> Terms, std::vector<std::string> Privacies);
 	static std::string Problem_155652(std::string Str, std::string Skip, int Index);
 	static int Problem_161989(int N, int M, std::vector<int> Section);
 	static std::vector<int> Problem_176963(std::vector<std::string> Name, std::vector<int> Yearning, std::vector<std::vector<std::string>> Photo);
