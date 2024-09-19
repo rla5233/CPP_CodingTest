@@ -53,6 +53,21 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+int Programmers::Problem_147355(std::string T, std::string P)
+{
+    int Result = 0, SizeP = P.size();
+    for (size_t i = 0; i <= T.size() - SizeP; ++i)
+    {
+        std::string PartStr = T.substr(i, SizeP);
+        if (PartStr <= P)
+        {
+            ++Result;
+        }
+    }
+
+    return Result;
+}
+
 std::vector<int> Programmers::Problem_150370(std::string Today, std::vector<std::string> Terms, std::vector<std::string> Privacies)
 {
     std::vector<int> Result;
