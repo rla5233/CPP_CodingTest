@@ -197,6 +197,21 @@ std::vector<std::string> Programmers::Problem_178871(std::vector<std::string> Pl
     return Players;
 }
 
+std::vector<std::vector<int>> Programmers::Problem_181830(std::vector<std::vector<int>> Arr)
+{
+    if (Arr.size() < Arr[0].size())
+    {
+        Arr.resize(Arr[0].size());
+    }
+
+    for (size_t i = 0; i < Arr.size(); ++i)
+    {
+        Arr[i].resize(Arr.size());
+    }
+
+    return Arr;
+}
+
 std::vector<std::vector<int>> Programmers::Problem_181832(int N)
 {
     std::vector<std::vector<int>> Answer(N, std::vector<int>(N, -1));
