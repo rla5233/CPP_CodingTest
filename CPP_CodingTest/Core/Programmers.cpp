@@ -53,6 +53,26 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_142086(std::string S)
+{
+    std::vector<int> Result(S.size(), 0), Alpha(26, -1);
+    for (size_t i = 0; i < S.size(); ++i)
+    {
+        if (-1 == Alpha[S[i] - 'a'])
+        {
+            Result[i] = -1;
+        }
+        else
+        {
+            Result[i] = i - Alpha[S[i] - 'a'];
+        }
+
+        Alpha[S[i] - 'a'] = i;
+    }
+
+    return Result;
+}
+
 int Programmers::Problem_147355(std::string T, std::string P)
 {
     int Result = 0, SizeP = P.size();
