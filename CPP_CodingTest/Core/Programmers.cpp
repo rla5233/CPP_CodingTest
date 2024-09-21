@@ -28,6 +28,13 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+int Programmers::Problem_120909(int N)
+{
+    double Numd = sqrt(N);
+    int Numl = static_cast<int>(Numd);
+    return (Numd - Numl) == 0.0 ? 1 : 2;
+}
+
 int Programmers::Problem_120956(std::vector<std::string> Babbling)
 {
     int Answer = 0;
