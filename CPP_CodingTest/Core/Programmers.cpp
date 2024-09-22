@@ -96,6 +96,25 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_138477(int K, std::vector<int> Scores)
+{
+    std::vector<int> Result(Scores.size(), 0);
+
+    std::multiset<int> Board;
+    for (size_t i = 0; i < Scores.size(); ++i)
+    {
+        Board.insert(Scores[i]);
+        if (K < Board.size())
+        {
+            Board.erase(Board.begin());
+        }
+
+        Result[i] = (*(Board.begin()));
+    }
+
+    return Result;
+}
+
 std::vector<int> Programmers::Problem_142086(std::string S)
 {
     std::vector<int> Result(S.size(), 0), Alpha(26, -1);

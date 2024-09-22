@@ -20,6 +20,7 @@ public:
 	static int Problem_120909(int N);
 	static std::string Problem_120911(std::string String);
 	static int Problem_120956(std::vector<std::string> Babbling);
+	static std::vector<int> Problem_138477(int K, std::vector<int> Scores);
 	static std::vector<int> Problem_142086(std::string S);
 	static int Problem_147355(std::string T, std::string P);
 	static std::vector<int> Problem_150370(std::string Today, std::vector<std::string> Terms, std::vector<std::string> Privacies);
