@@ -28,6 +28,12 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_120899(std::vector<int> Array)
+{
+    std::vector<int>::iterator iter = std::max_element(Array.begin(), Array.end());
+    return { *iter, static_cast<int>(iter - Array.begin()) };
+}
+
 std::vector<std::string> Programmers::Problem_120907(std::vector<std::string> Quiz)
 {
     std::vector<std::string> Result;
