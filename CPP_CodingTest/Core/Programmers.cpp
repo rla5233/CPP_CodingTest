@@ -34,6 +34,29 @@ std::vector<int> Programmers::Problem_120899(std::vector<int> Array)
     return { *iter, static_cast<int>(iter - Array.begin()) };
 }
 
+int Programmers::Problem_120902(std::string String)
+{
+    char Oper = ' ';
+    int Result = 0, Temp = 0;
+    std::stringstream SS(String);
+    SS >> Result;
+
+    while (SS >> Oper >> Temp)
+    {
+        switch (Oper)
+        {
+        case '+':
+            Result += Temp;
+            break;
+        case '-':
+            Result -= Temp;
+            break;
+        }
+    }
+
+    return Result;
+}
+
 std::vector<std::string> Programmers::Problem_120907(std::vector<std::string> Quiz)
 {
     std::vector<std::string> Result;
