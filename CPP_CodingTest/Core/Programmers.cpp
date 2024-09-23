@@ -125,6 +125,26 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+int Programmers::Problem_136798(int Number, int Limit, int Power)
+{
+    int Result = 0;
+    for (size_t i = 1; i <= Number; ++i)
+    {
+        int Count = 0;
+        for (size_t j = 1; j * j <= i; ++j)
+        {
+            if (0 == i % j)
+            {
+                (i == j * j) ? Count += 1 : Count += 2;
+            }
+        }
+
+        (Count > Limit) ? Result += Power : Result += Count;
+    }
+
+    return Result;
+}
+
 std::vector<int> Programmers::Problem_138477(int K, std::vector<int> Scores)
 {
     std::vector<int> Result(Scores.size(), 0);
