@@ -39,6 +39,21 @@ std::string Programmers::Problem_120893(std::string S)
     return S;
 }
 
+long long Programmers::Problem_120894(std::string Numbers)
+{
+    std::vector<std::string> Num = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+    for (int i = 0; i < Num.size(); ++i)
+    {
+        for (int j = Numbers.find(Num[i]); j != std::string::npos; j = Numbers.find(Num[i]))
+        {
+            Numbers.replace(j, Num[i].size(), std::to_string(i));
+        }
+    }
+
+    return std::stoll(Numbers);
+}
+
 std::vector<int> Programmers::Problem_120899(std::vector<int> Array)
 {
     std::vector<int>::iterator iter = std::max_element(Array.begin(), Array.end());
