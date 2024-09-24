@@ -28,6 +28,17 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+std::string Programmers::Problem_120893(std::string S)
+{
+    std::transform(S.begin(), S.end(), S.begin(), [&](char C)->char
+        {
+            return islower(C) ? C = toupper(C) : C = tolower(C);
+        }
+    );
+
+    return S;
+}
+
 std::vector<int> Programmers::Problem_120899(std::vector<int> Array)
 {
     std::vector<int>::iterator iter = std::max_element(Array.begin(), Array.end());
