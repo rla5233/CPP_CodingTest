@@ -54,6 +54,12 @@ long long Programmers::Problem_120894(std::string Numbers)
     return std::stoll(Numbers);
 }
 
+std::string Programmers::Problem_120895(std::string MyString, int Num1, int Num2)
+{
+    std::swap(MyString[Num1], MyString[Num2]);
+    return MyString;
+}
+
 std::vector<int> Programmers::Problem_120899(std::vector<int> Array)
 {
     std::vector<int>::iterator iter = std::max_element(Array.begin(), Array.end());
