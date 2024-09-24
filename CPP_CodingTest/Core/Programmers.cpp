@@ -45,9 +45,11 @@ long long Programmers::Problem_120894(std::string Numbers)
 
     for (int i = 0; i < Num.size(); ++i)
     {
-        for (int j = Numbers.find(Num[i]); j != std::string::npos; j = Numbers.find(Num[i]))
+        int Index = Numbers.find(Num[i]);
+        while(std::string::npos != Index)
         {
-            Numbers.replace(j, Num[i].size(), std::to_string(i));
+            Numbers.replace(Index, Num[i].size(), std::to_string(i));
+            Index = Numbers.find(Num[i]);
         }
     }
 
