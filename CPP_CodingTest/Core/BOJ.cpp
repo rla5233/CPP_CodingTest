@@ -26,6 +26,49 @@ void BOJ::Problem_1309()
 
 	std::cout << DP[N - 1];
 }
+
+void BOJ::Problem_1406()
+{
+	std::string Str = ""; std::cin >> Str;
+	std::deque<char> L(Str.begin(), Str.end()), R;
+
+	int M = 0; std::cin >> M;
+	for (int i = 0; i < M; ++i)
+	{
+		char Command = ' '; std::cin >> Command;
+
+		if ('L' == Command && !L.empty())
+		{
+			R.push_front(L.back());
+			L.pop_back();
+		}
+		else if ('D' == Command && !R.empty())
+		{
+			L.push_back(R.front());
+			R.pop_front();
+		}
+		else if ('B' == Command && !L.empty())
+		{
+			L.pop_back();
+		}
+		else if ('P' == Command)
+		{
+			char Text = ' '; std::cin >> Text;
+			L.push_back(Text);
+		}
+	}
+
+	for (char C : L)
+	{
+		std::cout << C;
+	}
+
+	for (char C : R)
+	{
+		std::cout << C;
+	}
+}
+
 void BOJ::Problem_1475()
 {
 	int N = 0;
@@ -52,6 +95,7 @@ void BOJ::Problem_1475()
 	
 	std::cout << SetCount;
 }
+
 void BOJ::Problem_1919()
 {
 	std::string str1 = "", str2 = "";
@@ -76,6 +120,7 @@ void BOJ::Problem_1919()
 
 	std::cout << Count;
 }
+
 void BOJ::Problem_1926()
 {
 	int n = 0, m = 0;
@@ -148,6 +193,7 @@ void BOJ::Problem_1926()
 
 	std::cout << PictureCount << '\n' << MaxPictureSize;
 }
+
 void BOJ::Problem_2164()
 {
 	int N = 0;
@@ -169,6 +215,7 @@ void BOJ::Problem_2164()
 
 	std::cout << Q.front();
 }
+
 void BOJ::Problem_2178()
 {
 	int N = 0, M = 0;
@@ -223,6 +270,7 @@ void BOJ::Problem_2178()
 	BFS(0, 0);
 	std::cout << Dist[N - 1][M - 1] + 1 << '\n';
 }
+
 void BOJ::Problem_2493()
 {
 	struct Top
@@ -259,6 +307,7 @@ void BOJ::Problem_2493()
 		Stack.push(Top(H, i));
 	}
 }
+
 void BOJ::Problem_2577()
 {
 	int A = 0, B = 0, C = 0;
@@ -277,6 +326,7 @@ void BOJ::Problem_2577()
 		std::cout << NumVec[i] << std::endl;
 	}
 }
+
 void BOJ::Problem_3273()
 {
 	int n = 0;
@@ -319,6 +369,7 @@ void BOJ::Problem_3273()
 
 	std::cout << Count;
 }
+
 void BOJ::Problem_6198()
 {
 	int N = 0;
@@ -362,6 +413,7 @@ void BOJ::Problem_6198()
 
 	std::cout << Sum;
 }
+
 void BOJ::Problem_10773()
 {
 	int K = 0;
@@ -392,6 +444,7 @@ void BOJ::Problem_10773()
 
 	std::cout << Sum;
 }
+
 void BOJ::Problem_10807()
 {
 	int N = 0;
@@ -419,6 +472,7 @@ void BOJ::Problem_10807()
 
 	std::cout << count;
 }
+
 void BOJ::Problem_10808()
 {
 	std::string Word = "";
@@ -435,6 +489,7 @@ void BOJ::Problem_10808()
 		std::cout << Alphabet[i] << " ";
 	}
 }
+
 void BOJ::Problem_10828()
 {
 	int N = 0;
@@ -502,6 +557,7 @@ void BOJ::Problem_10828()
 		}
 	}
 }
+
 void BOJ::Problem_10845()
 {
 	int N = 0;
@@ -570,6 +626,7 @@ void BOJ::Problem_10845()
 		}
 	}
 }
+
 void BOJ::Problem_11328()
 {
 	int N = 0;
@@ -593,6 +650,7 @@ void BOJ::Problem_11328()
 		}
 	}
 }
+
 void BOJ::Problem_13300()
 {
 	int N = 0, K = 0;
@@ -627,6 +685,7 @@ void BOJ::Problem_13300()
 
 	std::cout << Count;
 }
+
 void BOJ::Problem_18258()
 {
 	std::ios_base::sync_with_stdio(0);
