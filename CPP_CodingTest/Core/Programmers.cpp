@@ -179,6 +179,22 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::string Programmers::Problem_134240(std::vector<int> Foods)
+{
+    std::string Result = "";
+    for (int i = 1; i < Foods.size(); ++i)
+    {
+        for (int j = 0; j < Foods[i] / 2; ++j)
+        {
+            Result += std::to_string(i);
+        }
+    }
+
+    std::string Temp(Result.rbegin(), Result.rend());
+    Result += "0" + Temp;
+    return Result;
+}
+
 int Programmers::Problem_136798(int Number, int Limit, int Power)
 {
     int Result = 0;

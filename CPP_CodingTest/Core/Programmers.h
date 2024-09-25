@@ -26,6 +26,7 @@ public:
 	static int Problem_120909(int N);
 	static std::string Problem_120911(std::string String);
 	static int Problem_120956(std::vector<std::string> Babbling);
+	static std::string Problem_134240(std::vector<int> Foods);
 	static int Problem_136798(int Number, int Limit, int Power);
 	static std::vector<int> Problem_138477(int K, std::vector<int> Scores);
 	static std::vector<int> Problem_142086(std::string S);
