@@ -16,6 +16,7 @@ public:
 	
 public:
 	static std::string Problem_12899(int N);
+	static int Problem_120890(std::vector<int> Array, int N);
 	static std::string Problem_120893(std::string S);
 	static long long Problem_120894(std::string Numbers);
 	static std::string Problem_120895(std::string MyString, int Num1, int Num2);

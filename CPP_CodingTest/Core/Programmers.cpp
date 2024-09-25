@@ -28,6 +28,26 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+int Programmers::Problem_120890(std::vector<int> Array, int N)
+{
+    int MinDiff = INT32_MAX, MinIdx = 0;
+    for (int i = 0; i < Array.size(); ++i)
+    {
+        int Diff = abs(Array[i] - N);
+        if (MinDiff > Diff)
+        {
+            MinDiff = Diff;
+            MinIdx = i;
+        }
+        else if (MinDiff == Diff && Array[i] < Array[MinIdx])
+        {
+            MinIdx = i;
+        }
+    }
+
+    return Array[MinIdx];
+}
+
 std::string Programmers::Problem_120893(std::string S)
 {
     std::transform(S.begin(), S.end(), S.begin(), [&](char C)->char
