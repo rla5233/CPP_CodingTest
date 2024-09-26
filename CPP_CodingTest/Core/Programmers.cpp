@@ -28,6 +28,20 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+std::string Programmers::Problem_120885(std::string Bin1, std::string Bin2)
+{
+    std::string Result = "";
+    int Sum = std::stoi(Bin1, nullptr, 2) + std::stoi(Bin2, nullptr, 2);
+
+    while (Sum != 0)
+    {
+        Result = std::to_string(Sum % 2) + Result;
+        Sum >>= 1;
+    }
+
+    return Result.empty() ? "0" : Result;
+}
+
 int Programmers::Problem_120890(std::vector<int> Array, int N)
 {
     int MinDiff = INT32_MAX, MinIdx = 0;
