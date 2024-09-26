@@ -193,6 +193,34 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+int Programmers::Problem_133502(std::vector<int> Ingredients)
+{
+    int Result = 0;
+    std::vector<int> Stack = { 0 };
+    for (int Ingredient : Ingredients)
+    {
+        if (1 == Stack.back() && 2 == Ingredient)
+        {
+            Stack.back() = 12;
+        }
+        else if (12 == Stack.back() && 3 == Ingredient)
+        {
+            Stack.back() = 123;
+        }
+        else if (123 == Stack.back() && 1 == Ingredient)
+        {
+            ++Result;
+            Stack.pop_back();
+        }
+        else
+        {
+            Stack.push_back(Ingredient);
+        }
+    }
+
+    return Result;
+}
+
 std::string Programmers::Problem_134240(std::vector<int> Foods)
 {
     std::string Result = "";
