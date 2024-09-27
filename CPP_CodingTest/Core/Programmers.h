@@ -17,6 +17,7 @@ public:
 public:
 	static std::string Problem_12899(int N);
 	static int Problem_120875(std::vector<std::vector<int>> Dots);
+	static std::vector<int> Problem_120880(std::vector<int> NumList, int N);
 	static std::string Problem_120885(std::string Bin1, std::string Bin2);
 	static int Problem_120890(std::vector<int> Array, int N);
 	static std::string Problem_120893(std::string S);

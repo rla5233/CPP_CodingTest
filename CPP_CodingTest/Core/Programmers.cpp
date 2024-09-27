@@ -51,6 +51,22 @@ int Programmers::Problem_120875(std::vector<std::vector<int>> Dots)
     return 0;
 }
 
+std::vector<int> Programmers::Problem_120880(std::vector<int> NumList, int N)
+{
+    std::sort(NumList.begin(), NumList.end(), [=](int A, int B)
+        {
+            if (abs(N - A) == abs(N - B))
+            {
+                return A > B;
+            }
+
+            return abs(N - A) < abs(N - B);
+        }
+    );
+
+    return NumList;
+}
+
 std::string Programmers::Problem_120885(std::string Bin1, std::string Bin2)
 {
     std::string Result = "";
