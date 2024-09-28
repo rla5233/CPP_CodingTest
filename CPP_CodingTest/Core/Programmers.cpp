@@ -28,6 +28,26 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+int Programmers::Problem_120864(std::string MyString)
+{
+    int Result = 0;
+    std::string Temp = "";
+    for (char C : MyString)
+    {
+        if (isdigit(C))
+        {
+            Temp.push_back(C);
+        }
+        else if (!Temp.empty())
+        {
+            Result += std::stoi(Temp);
+            Temp = "";
+        }
+    }
+
+    return Temp.empty() ? Result : Result += std::stoi(Temp);
+}
+
 int Programmers::Problem_120875(std::vector<std::vector<int>> Dots)
 {
     std::vector<std::vector<int>> Indexs = { {0, 1, 2, 3}, { 0, 2, 1, 3 }, { 0, 3, 1, 2 } };
