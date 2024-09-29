@@ -4,6 +4,5 @@ int main()
 {
     IOTIMESHORT;
 
-
     return 0;
 }
