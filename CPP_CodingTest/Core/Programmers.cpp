@@ -28,6 +28,20 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+int Programmers::Problem_120861(std::string MyString)
+{
+    int Result = 0;
+    for (char C : MyString)
+    {
+        if (isdigit(C))
+        {
+            Result += C - '0';
+        }
+    }
+
+    return Result;
+}
+
 std::vector<int> Programmers::Problem_120861(std::vector<std::string> KeyInput, std::vector<int> Board)
 {
     struct Point
