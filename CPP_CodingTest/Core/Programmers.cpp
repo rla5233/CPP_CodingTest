@@ -299,6 +299,32 @@ int Programmers::Problem_120956(std::vector<std::string> Babbling)
     return Answer;
 }
 
+std::string Programmers::Problem_131128(std::string X, std::string Y)
+{
+    std::string Result = "";
+    std::vector<int> NumX(10, 0), NumY(10, 0);
+    for (char C : X)
+    {
+        ++NumX[C - '0'];
+    }
+
+    for (char C : Y)
+    {
+        ++NumY[C - '0'];
+    }
+
+    for (int i = 9; i >= 0; --i)
+    {
+        int Min = std::min(NumX[i], NumY[i]);
+        for (int j = 0; j < Min; ++j)
+        {
+            Result.push_back(i + '0');
+        }
+    }
+
+    return Result.empty() ? "-1" : ('0' == Result.front()) ? "0" : Result;
+}
+
 int Programmers::Problem_133502(std::vector<int> Ingredients)
 {
     int Result = 0;
