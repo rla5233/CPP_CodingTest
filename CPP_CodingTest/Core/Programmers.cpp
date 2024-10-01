@@ -28,6 +28,20 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+std::vector<int> Programmers::Problem_120844(std::vector<int> Numbers, std::string Direction)
+{
+    if ("right" == Direction)
+    {
+        std::rotate(Numbers.begin(), Numbers.end() - 1, Numbers.end());
+    }
+    else
+    {
+        std::rotate(Numbers.begin(), Numbers.begin() + 1, Numbers.end());
+    }
+
+    return Numbers;
+}
+
 int Programmers::Problem_120861(std::string MyString)
 {
     int Result = 0;
