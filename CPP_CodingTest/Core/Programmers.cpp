@@ -28,6 +28,40 @@ std::string Programmers::Problem_12899(int N)
     return Answer;
 }
 
+std::string Programmers::Problem_118666(std::vector<std::string> Survey, std::vector<int> Choices)
+{
+    char MBTI[4][2] = { { 'R', 'T' }, { 'C', 'F' }, { 'J', 'M' }, { 'A', 'N' } };
+    int Score[7] = { 3, 2, 1, 0, -1, -2, -3 };
+
+    std::map<char, int> MBTIScore;
+    for (int i = 0; i < Survey.size(); ++i)
+    {
+        if (Choices[i] < 4)
+        {
+            MBTIScore[Survey[i][0]] += Score[Choices[i]];
+        }
+        else
+        {
+            MBTIScore[Survey[i][1]] -= Score[Choices[i]];
+        }
+    }
+
+    std::string Result = "";
+    for (int i = 0; i < 4; ++i)
+    {
+        if (MBTIScore[MBTI[i][0]] >= MBTIScore[MBTI[i][1]])
+        {
+            Result.push_back(MBTI[i][0]);
+        }
+        else
+        {
+            Result.push_back(MBTI[i][1]);
+        }
+    }
+
+    return Result;
+}
+
 std::vector<int> Programmers::Problem_120844(std::vector<int> Numbers, std::string Direction)
 {
     if ("right" == Direction)

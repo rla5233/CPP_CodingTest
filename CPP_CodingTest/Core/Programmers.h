@@ -16,6 +16,7 @@ public:
 	
 public:
 	static std::string Problem_12899(int N);
+	static std::string Problem_118666(std::vector<std::string> Survey, std::vector<int> Choices);
 	static std::vector<int> Problem_120844(std::vector<int> Numbers, std::string Direction);
 	static int Problem_120861(std::string MyString);
 	static std::vector<int> Problem_120861(std::vector<std::string> KeyInput, std::vector<int> Board);
